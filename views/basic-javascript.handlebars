@@ -9,31 +9,40 @@
 
 
 </div>
-<div class="row">
-    <div class="col">
+<div class="row test-questions" style="margin:20px 50px 20px 50px;">
         {{#each Questions}}
-        <h4>{{text}}</h4>
-        <div class="row">
-            <div class="col">
-                <h5>{{option1}}</h5>
-                <button class="red" value="option1">A</button>
-
-            </div>
-            <div class="col">
-                <h5>{{option2}}</h5>
-                <button class="blue" value="option1">B</button>
-            </div>
-            <div class="col">
-                <h5>{{option3}}</h5>
-                <button class="green " value="option1">C</button>
-            </div>
-            <div class="col">
-                <h5>{{option4}}</h5>
-                <button class="orange" value="option1">D</button>
-            </div>
-        </div>
-        {{/each}}
+    <div class="col " style="margin: 15px;">
+        <h4>{{text}}</h4>  <form action="#">
+    <p>
+      <label>
+        <input name="group1" class="questionLabel" type="radio" />
+        <span>{{option1}}</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="group1" class="questionLabel" type="radio" />
+        <span>{{option2}}</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="group1" class="questionLabel" type="radio"  />
+        <span>{{option3}}</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="group1" class="questionLabel" type="radio" />
+        <span>{{option4}}</span>
+      </label>
+    </p>
+    
+  </form>
+        
+        <br><br>
     </div>
+        {{/each}}
 
 
 
