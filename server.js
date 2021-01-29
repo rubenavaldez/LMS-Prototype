@@ -2,7 +2,8 @@ var express = require('express');
 var app = express();
 require('dotenv').config()
 var exphbs = require("express-handlebars");
-
+require('./routes/htmlroutes')(app)
+const mongoose = require('mongoose')
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -23,7 +24,6 @@ res.render("index", {})
 })
  
 //Database
-const mongoose = require('mongoose')
 //console.log(process.env)
 mongoose.connect('mongodb://127.0.0.1:27017/LMS', { useNewUrlParser: true, useUnifiedTopology: true }); 
 
