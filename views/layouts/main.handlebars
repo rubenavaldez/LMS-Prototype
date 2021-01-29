@@ -3,16 +3,66 @@
 
 <head>
   <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Anton|Fredericka+the+Great|Josefin+Slab|Lobster|Niconne&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Anton|Fredericka+the+Great|Josefin+Slab|Lobster|Niconne&display=swap"
+    rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-  
+
   <link rel="stylesheet" href="./styles/style.css" media="screen" title="no title" charset="utf-8">
   <title>LMS Demo</title>
+  <script>
+    //disable devtools
+    window.onresize = function () {
+      if ((window.outerHeight - window.innerHeight) > 100) {
+        window.location.replace("http://localhost:3000")
+        console.log("using devtool is prohibited")
+
+
+
+      }
+    }
+    //disable ctrl c || x
+    {
+      {
+        !--document.onkeypress = function (e) {
+
+          e = e || window.event;
+          if (e.keyCode == 120 || e.keyCode == 99) {
+            window.location.replace("http://localhost:3000")
+          }
+          alert(e.keyCode)
+        }; --}
+    }
+    //disable text highlight
+    function clickIE() {
+      if (document.all) {
+        return false;
+      }
+    }
+    function clickNS(e) {
+      if (document.layers || (document.getElementById && !document.all)) {
+        if (e.which == 2 || e.which == 3) {
+          return false;
+        }
+      }
+    }
+    if (document.layers) {
+      document.captureEvents(Event.MOUSEDOWN);
+      document.onmousedown = clickNS;
+    }
+    else {
+      document.onmouseup = clickNS;
+      document.oncontextmenu = clickIE;
+    }
+    document.oncontextmenu = new Function("return false")
+  </script>
+
 </head>
 
-<body>
+<body onload=setInterval("window.clipboardData.setData('text','')",2) oncontextmenu="return false"
+  onselectstart="return false">
   <nav>
     <div class="nav-wrapper blue">
       <a href="#" class="brand-logo">Perryville Assessment LMS</a>
