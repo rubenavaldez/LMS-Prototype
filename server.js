@@ -1,12 +1,31 @@
 var express = require('express');
 var app = express();
-require('dotenv')
+require('dotenv').config()
+var exphbs = require("express-handlebars");
 
 
+// Middleware
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.static("public"));
 
-app.get('/',(req,res) => res.json({message:"it works"}))
-
-
+// Handlebars
+app.engine(
+    "handlebars",
+    exphbs({
+      defaultLayout: "main"
+    })
+  );
+  app.set("view engine", "handlebars");
+  
+app.get('/',(req,res) => {
+res.render("index", {})
+})
+ 
+//Database
+const mongoose = require('mongoose')
+//console.log(process.env)
+mongoose.connect('mongodb://127.0.0.1:27017/LMS', { useNewUrlParser: true, useUnifiedTopology: true }); 
 
 
 const listener = app.listen(process.env.PORT || 3000, () => {
