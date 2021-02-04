@@ -20,12 +20,12 @@ module.exports = function(app){
           timeLimit = 60
         }
 
-        questionAmount= data[0].amount;
+        questionAmount= parseInt(data[0].amount);
         console.log("questions: " + questionAmount)
      
 
 
-       Question.find({module:req.query.test}).then(function(dbQuestions){
+       Question.find({module:req.query.test}).limit(questionAmount).then(function(dbQuestions){
             //res.json({Question:dbQuestions})
            res.render('test',{
                Questions:dbQuestions.map(question => question.toJSON()),
