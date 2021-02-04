@@ -1,13 +1,14 @@
-<h1 class="center">Basic JavaScript</h1>
+<h1 class="center">{{testTitle}}</h1>
 <h5 class="center">
-  You will have 90 minutes to complete the assessment. The Basic Javacript is 40 questions.
+  You will have 90 minutes to complete the assessment. The {{testTitle}} assessment is 40 questions multiple choice.
 </h5>
+<div id="timer" class="center">00:00</div>
 
 
 <div class="row buttons" style="margin-left: 48%;">
-    <button id="action-btn" class="btn waves-effect waves-light green" value="Mod2SM1">start</button>
-
-
+  <div id="start-test"> 
+    <button id="action-btn" class="btn waves-effect waves-light green" onclick="startTest(90)" value="Mod2SM1">start</button>
+</div>
 </div>
 <div class="row test-questions" style="margin:20px 50px 20px 50px;">
         {{#each Questions}}

@@ -1,3 +1,12 @@
 .questionLabel{
     color:black;
 }
+
+.test-questions{
+    display:none;
+}
+
+#timer{
+    color:red;
+    font-size: xx-large;
+}

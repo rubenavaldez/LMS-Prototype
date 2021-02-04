@@ -8,7 +8,7 @@
     rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="./styles/materialize.css">
 
   <link rel="stylesheet" href="./styles/style.css" media="screen" title="no title" charset="utf-8">
   <title>LMS Demo</title>
@@ -18,7 +18,7 @@
       if ((window.outerHeight - window.innerHeight) > 100) {
         window.location.replace("http://localhost:3000")
         console.log("using devtool is prohibited")
-
+      alert("devtools")
 
 
       }
@@ -26,14 +26,14 @@
     //disable ctrl c || x
     {
       {
-        !--document.onkeypress = function (e) {
+        document.onkeypress = function (e) {
 
           e = e || window.event;
           if (e.keyCode == 120 || e.keyCode == 99) {
             window.location.replace("http://localhost:3000")
           }
           alert(e.keyCode)
-        }; --}
+        };}
     }
     //disable text highlight
     function clickIE() {
@@ -61,7 +61,7 @@
 
 </head>
 
-<body onload=setInterval("window.clipboardData.setData('text','')",2) oncontextmenu="return false"
+<body  oncontextmenu="return false"
   onselectstart="return false">
   <nav>
     <div class="nav-wrapper blue">
@@ -74,8 +74,9 @@
     </div>
   </nav>
   {{{body}}}
-
-
+<script type ="text/javascript" src="./js/materialize.js"></script>
+<script type ="text/javascript" src="./js/jquery.js"></script>
+<script type ="text/javascript" src="./js/script.js"></script>
 </body>
 
 </html>
