@@ -5,7 +5,7 @@ var exphbs = require("express-handlebars");
 require('./routes/htmlroutes')(app)
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1:27017/LMS', { useNewUrlParser: true, useUnifiedTopology: true }); 
-var Question = require("./models/Questions  ")
+var Question = require('./models/Questions')
 var inquirer = require('inquirer');
 const { query } = require('express');
 

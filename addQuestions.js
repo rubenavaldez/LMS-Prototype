@@ -9,7 +9,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 
 
-var questionToAdd = {
+var questionToAdd = [{
     module:"regular-expressions",
     type:"multiple choice",
     text:"Select the option that best fills in the missing words from the following sentence: \nTo match both the upper and lower case versions of a string you would use  the \_\_\_\_ character that is also known as a \_\_\_\_\_ similar to using g for global in a regular expression.",
@@ -17,17 +17,37 @@ var questionToAdd = {
     option2:"c, symbol",
     option3:"i, flag",
     option4:"i, character"
-}
+}]
 
-var newQuestion = Question(questionToAdd)
 
-newQuestion.save((err,data)=>{
+
+Question.create(questionToAdd,(err,data)=>{
     if(err){
         console.log(err)
     }else{
         console.log(data)
     }
 })
+
+// var questionToAdd = {
+//     module:"regular-expressions",
+//     type:"multiple choice",
+//     text:"Select the option that best fills in the missing words from the following sentence: \nTo match both the upper and lower case versions of a string you would use  the \_\_\_\_ character that is also known as a \_\_\_\_\_ similar to using g for global in a regular expression.",
+//     option1:"^ , flag",      
+//     option2:"c, symbol",
+//     option3:"i, flag",
+//     option4:"i, character"
+// }
+
+// var newQuestion = Question(questionToAdd)
+
+// newQuestion.save((err,data)=>{
+//     if(err){
+//         console.log(err)
+//     }else{
+//         console.log(data)
+//     }
+// })
 
 // let questionArray = [
 //     {

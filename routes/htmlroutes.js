@@ -8,11 +8,12 @@ module.exports = function(app){
       console.log(req.query.test)
     
      let testTitle = convertName(req.query.test)
-     //console.log(req.query.test)
+     console.log(req.query.test)
      let timeLimit;
      let questionAmount;
      Test.find({name:req.query.test}).limit(1).exec((err,data)=>{
-       //console.log(data[0].timeLimit) 
+       console.log(data[0]) 
+       console.log(data[0].timeLimit) 
         if(data[0].timeLimit != undefined ){
           timeLimit = parseInt(data[0].timeLimit)
           console.log("database: " + timeLimit)          
